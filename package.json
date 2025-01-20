@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "cd app && npm start",
-    "app-build": "cd app && npm run build",
-    "react-start": "cd app && npm start",
-    "electron-start": "electron .",
-    "electron:build": "electron-builder",
-    "build": "npm run app-build && electron-builder",
-    "electron-pack": "electron-builder",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "start": "cd app && npm start",
+  "app-build": "cd app && npm run build",
+  "react-start": "cd app && npm start",
+  "electron-start": "electron .",
+  "electron:build": "npx electron-builder",
+  "build": "npm run app-build && npx electron-builder"
+}
+,
   "build": {
     "appId": "com.yourdomain.slammapviewer",
     "productName": "SLAMMapViewer",

@@ -23,19 +23,15 @@ jobs:
         with:
           node-version: 18
 
-      # 루트 디렉토리 의존성 설치
-      - name: Install root dependencies
+      # 의존성 설치
+      - name: Install dependencies
         run: npm install
-
-      # app 디렉토리 의존성 설치
-      - name: Install app dependencies
-        run: cd app && npm install
 
       # React 앱 빌드
       - name: Build React app
-        run: npx cross-env CI=false npm run app-build
+        run: npm run app-build
 
-      # Electron 앱 빌드 (npx로 실행)
+      # Electron 앱 빌드
       - name: Build Electron app
         run: npx electron-builder
 
