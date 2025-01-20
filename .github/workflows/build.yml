@@ -1,0 +1,43 @@
+name: Build Electron App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # 리포지토리 체크아웃
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Node.js 설치
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 의존성 설치
+      - name: Install dependencies
+        run: npm install
+
+      # React 앱 빌드
+      - name: Build React app
+        run: npm run build
+
+      # Electron 앱 빌드
+      - name: Build Electron app
+        run: npm run electron:build
+
+      # 빌드 결과 업로드
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+          path: dist/

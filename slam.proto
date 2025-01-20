@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package rbk.protocol;
+
+message Message_Map {
+    string map_directory = 1;
+    Message_MapHeader header = 2;
+    repeated Message_MapPos normal_pos_list = 3;
+    repeated Message_MapLine normal_line_list = 4;
+    repeated Message_AdvancedPoint advanced_point_list = 6;
+    repeated Message_AdvancedLine advanced_line_list = 7;
+    repeated Message_AdvancedCurve advanced_curve_list = 8;
+    repeated Message_AdvancedArea advanced_area_list = 9;
+}
+
+message Message_MapHeader {
+    string map_type = 1;
+    string map_name = 2;
+    Message_MapPos min_pos = 3;
+    Message_MapPos max_pos = 4;
+    double resolution = 5;
+    string version = 8;
+}
+
+message Message_MapPos {
+    double x = 1;
+    double y = 2;
+}
+
+message Message_MapLine {
+    Message_MapPos start_pos = 1;
+    Message_MapPos end_pos = 2;
+}
