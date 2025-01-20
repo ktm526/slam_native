@@ -27,22 +27,15 @@ jobs:
       - name: Install root dependencies
         run: npm install
 
-      # 4. React와 React DOM 버전 명시적 설치
-      - name: Install React dependencies
-        run: |
-          cd app
-          npm install react@18.2.0 react-dom@18.2.0
-
-      # 5. React 앱 빌드 (경고 무시)
+      # 4. React 앱 빌드
       - name: Build React app
-        run: |
-          npx cross-env CI=false npm run build
+        run: npm run app-build
 
-      # 6. Electron 앱 빌드
+      # 5. Electron 앱 빌드
       - name: Build Electron app
         run: npx electron-builder
 
-      # 7. 빌드 결과 업로드
+      # 6. 빌드 결과 업로드
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
