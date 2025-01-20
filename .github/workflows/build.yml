@@ -31,10 +31,10 @@ jobs:
       - name: Install app dependencies
         run: cd app && npm install
 
-      # React 앱 빌드 (CI=false로 경고 무시)
+      # React 앱 빌드 (CI=false로 경고 무시, Windows용으로 set 명령 사용)
       - name: Build React app
         run: |
-          export CI=false
+          set CI=false
           npm run app-build
 
       # Electron 앱 빌드
