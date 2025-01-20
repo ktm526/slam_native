@@ -19,8 +19,8 @@ function App() {
   const [amrPosition, setAmrPosition] = useState(null); // AMR 위치 상태
   //const udpPort = 19301;
 
-  //const [robotData, setRobotData] = useState(null);
-  //const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [robotData, setRobotData] = useState(null);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   useEffect(() => {
     // 메인 프로세스에서 전송된 로봇 데이터를 수신
