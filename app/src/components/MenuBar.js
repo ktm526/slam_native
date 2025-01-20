@@ -6,10 +6,10 @@ import RealTimeIcon from '../icons/realtime.svg';
 import SlamIcon from '../icons/slam.svg';
 import PathIcon from '../icons/path.svg';
 import StationIcon from '../icons/station.svg';
-import DownloadIcon from '../icons/download.svg';
-import UploadIcon from '../icons/upload.svg';
+//import DownloadIcon from '../icons/download.svg';
+//import UploadIcon from '../icons/upload.svg';
 import SettingsIcon from '../icons/settings.svg';
-import SaveIcon from '../icons/save.svg';
+//import SaveIcon from '../icons/save.svg';
 
 const menuItems = [
     { icon: RealTimeIcon, text: '실시간 위치' },
