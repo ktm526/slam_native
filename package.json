@@ -41,9 +41,9 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "electron": "^34.0.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "electron-builder": "^25.1.8"
   },
   "dependencies": {
     "electron-builder": "^25.1.8",

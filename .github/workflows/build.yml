@@ -31,13 +31,13 @@ jobs:
       - name: Install app dependencies
         run: cd app && npm install
 
-      # React 앱 빌드 (cross-env로 환경 변수 설정)
+      # React 앱 빌드
       - name: Build React app
         run: npx cross-env CI=false npm run app-build
 
-      # Electron 앱 빌드
+      # Electron 앱 빌드 (npx로 실행)
       - name: Build Electron app
-        run: electron-builder
+        run: npx electron-builder
 
       # 빌드 결과 업로드
       - name: Upload artifact
